@@ -1,0 +1,81 @@
+.\" Manpage for shokunin-june.
+.\" Contact amarks@thoughtworks.com to correct errors or typos.
+.TH man 6 "01 June 2019" "1.0" "shokunin-june man page"
+.SH NAME
+shokunin-june \- build a simple RPG game just using Bash scripts.
+.SH SYNOPSIS
+.B shokunin-june 
+width depth height
+.SH DESCRIPTION
+.B shokunin-june 
+is simple interactive RPG (role playing game) taking place in a 3-dimensional set of rooms.  The player begins in a random room and must move towards the randomly generated target room to complete the game successfully.  The player's starting room must not be the target room, or on the same floor (Z) as the target room.
+.PP
+.B Movement
+.PP
+By default, rooms are not connected (i.e., you cannot move between them).  To move between rooms on the same floor, you need to use the 
+.B sledge.  
+To move between rooms on different floors, you need to use the 
+.B ladder.
+.PP
+You can take the sledge with you to continue moving between rooms, but you cannot take the ladder, so you can only move between floors by finding a room which contains a ladder.
+.PP
+If a room contains a ladder, it will allow you to go both up and down, assuming there are rooms in that direction.
+.PP
+.B Gold
+.PP
+You will also come across randomly placed 
+.B gold 
+in some of the rooms you visit.  You can pick up the gold and carry it, but it's heavy, so you won't be able to carry more than 10 pieces of gold.
+.PP
+You should also be able to find out how much gold you have at any point in time. 
+.SH OPTIONS
+.TP
+.B width 
+The width (in rooms) of the game world (i.e., X).  Must be an integer > 1.
+.TP
+.B depth 
+The depth (in rooms) of the game world (i.e., Y).  Must be an integer > 1.
+.TP
+.B height 
+The height (in rooms) of the game world (i.e., Z). Must be an integer > 1. 
+.SH COMMANDS
+The following commands can be entered by the player during the game.
+.TP
+.B north/south/east/west/up/down
+Move in that direction if you are carrying the sledge or in a room with the ladder.
+.TP
+.B drop {all|item name}
+Drop one unit of the specified item (if you have it) or drop all items.
+.TP
+.B take {item name}
+Take the specified item if you can carry it and it's in the current room.
+.TP
+.B inventory
+List all the items you have, along with their quantity if you have more than one.
+.TP
+.B quit
+That's it - I've had enough: let me out of this place.
+.SH IMPLEMENTATION REQUIREMENTS
+You can only use bash(1) scripts to implement the solution :-)  Not the Bourne shell, not the C shell, no other artisinal hipster shells... just bash(1).
+.PP
+Like all good shell scripts, you should return an appropriate status code on exit.
+.PP
+Like all good developers, I fully expect to see evidence of testing and static code analysis of your scripts.
+. SH OPTIONAL EXTENSIONS
+.TP
+.B In-game Command Aliasing
+Why type "up" when you can "elevate" instead?  Why "take" when you can "appropriate"... you get the idea.
+.TP
+.B Graphical Interface
+Just because you're in a terminal, doesn't mean you cannot use colour and ASCII art!
+.TP
+.B Saved Games
+For those long hours in the RPG, being able to quit and then return to the game at a later point without losing your inventory and location.
+.SH DEADLINE
+In grand Shokunin fashion, you have 2 weeks to complete the solution.  The solution is due by 23:59 AEST on ???
+.SH SEE ALSO
+bash(1)
+.SH BUGS
+This is just a spec - I'll leave the bugs to you folks.
+.SH AUTHOR
+Andy Marks (amarks@thoughtworks.com)
