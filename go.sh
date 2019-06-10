@@ -9,7 +9,7 @@ MENU="Choose one of the following options:"
 
 OPTIONS=(1 "Test"
          2 "Lint"
-         3 "Option 3")
+         3 "Coverage")
 
 CHOICE=$(dialog --clear \
                 --backtitle "$BACKTITLE" \
@@ -28,6 +28,6 @@ case $CHOICE in
             shellcheck -s bash src/*
             ;;
         3)
-            echo "You chose Option 3"
+            bashcov --skip-uncovered ./test.sh
             ;;
 esac

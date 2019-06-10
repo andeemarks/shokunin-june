@@ -38,7 +38,7 @@ usage_and_exit() {
 
 if is_valid_arg "$WIDTH" && is_valid_arg "$BREADTH" && is_valid_arg "$DEPTH"
 then
-    ./src/house.sh "$WIDTH" "$BREADTH" "$DEPTH"
+    ./src/destination.sh "$WIDTH" "$BREADTH" "$DEPTH"
     exit 0
 fi
 
