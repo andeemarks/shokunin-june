@@ -17,8 +17,6 @@ USAGE="usage: shokunin width depth height"
   do
     run ${CUT} 2 2 2
     [ "$status" -eq 0 ]
-    # echo "${lines[*]}"
-    # echo (1 1 1)
     [ "${lines[*]}" != "${ORIGIN[*]}" ]
   done
 }
