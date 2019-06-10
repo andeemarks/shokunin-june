@@ -1,5 +1,9 @@
 #!/bin/bash
 
+set -o nounset
+set -o errexit
+set -o pipefail
+
 HEIGHT=15
 WIDTH=40
 CHOICE_HEIGHT=4

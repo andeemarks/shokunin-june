@@ -1,4 +1,9 @@
 #!/bin/bash
+
+set -o nounset
+set -o errexit
+set -o pipefail
+
 WIDTH=${1}
 BREADTH=${2}
 DEPTH=${3}
