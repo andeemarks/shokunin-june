@@ -1,0 +1,20 @@
+
+ You Are Standing In An Open Field West Of A White House,
+ With A Boarded Front Door; There Is A Mail Box Here
+
+ > LOOK
+
+ Off in the distance, you can see a number of other ThoughtWorkers
+ feverishly hacking away on Bash scripts.  You hear the occasional
+ "woot!" as they draw ever closer to completing the June Shokunin.
+
+ > STATUS
+
+ It is day 4 of the June Challenge and you have 10 days remaining
+ to submit a solution.  No one else has submitted yet - will you 
+ be the first?
+
+
+
+
+

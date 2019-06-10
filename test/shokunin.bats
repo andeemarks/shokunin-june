@@ -1,14 +1,14 @@
-CUT=../src/shokunin.sh
+CUT=./src/shokunin.sh
 USAGE="usage: shokunin width depth height"
 
 @test "invoking without arguments prints usage" {
-  run $CUT
+  run ${CUT}
   [ "$status" -eq 1 ]
   [ "${lines[0]}" = "${USAGE}" ]
 }
 
 @test "invoking without enough arguments prints usage" {
-  run $CUT 1
+  run ${CUT} 1
   [ "$status" -eq 1 ]
   [ "${lines[0]}" = "${USAGE}" ]
 
@@ -19,14 +19,14 @@ USAGE="usage: shokunin width depth height"
 }
 
 @test "invoking without numeric arguments prints usage" {
-  run $CUT a b c
+  run ${CUT} a b c
   [ "$status" -eq 1 ]
   [ "${lines[0]}" = "${USAGE}" ]
 
 }
 
 @test "invoking without valid arguments prints usage" {
-  run $CUT 2 1 0
+  run ${CUT} 2 1 0
   [ "$status" -eq 1 ]
   [ "${lines[0]}" = "${USAGE}" ]
 
