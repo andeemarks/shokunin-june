@@ -1,3 +1,5 @@
+#!/bin/bash
+
 CUT=./src/shokunin.sh
 USAGE="usage: shokunin width depth height"
 

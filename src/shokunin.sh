@@ -38,7 +38,7 @@ usage_and_exit() {
 
 if is_valid_arg "$WIDTH" && is_valid_arg "$BREADTH" && is_valid_arg "$DEPTH"
 then
-    echo "Building Game with dimensions $WIDTH $BREADTH $DEPTH"
+    ./src/house.sh "$WIDTH" "$BREADTH" "$DEPTH"
     exit 0
 fi
 
