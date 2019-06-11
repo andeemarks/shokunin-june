@@ -1,0 +1,15 @@
+SHOKUNIN-JUNE
+Shokunin interactive fiction - a text adventure
+Copyright (c) 2019 by Andy. All rights reserved.
+Release 59 / Serial number 851108
+
+You wake up. The room is spinning very gently round your head. Or at least it would be if you could see it which you can't.
+
+It is pitch black.
+
+>INVENTORY
+You have:
+    a splitting headache
+    no tea
+
+You also have 5 days to complete the Shokunin challenge.  Hurry, I can hear a Gelatinous Cube slithering closer.
