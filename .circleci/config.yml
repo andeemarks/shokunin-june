@@ -1,6 +1,6 @@
 version: 2
 jobs:
-  shellcheck:
+  lint:
       docker:
         - image: koalaman/shellcheck-alpine:stable
       steps:
@@ -9,6 +9,16 @@ jobs:
             name: Check Scripts
             command: |
               find . -type f -name '*.sh' | xargs shellcheck --external-sources
+
+  coverage:
+      docker:
+        - image: circleci/ruby:latest
+      steps:
+        - checkout
+        - run:
+            name: Install
+            command: |
+              gem install bashcov
 
   test:
     machine: true
@@ -28,10 +38,11 @@ workflows:
   version: 2
   workflow:
     jobs:
-      - shellcheck
+      - lint
       - test:
           requires:
             - shellcheck
           filters:
             branches:
               only: master
+      - coverage
