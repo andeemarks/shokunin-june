@@ -1,6 +1,16 @@
 version: 2
 jobs:
-  build:
+  shellcheck:
+      docker:
+        - image: koalaman/shellcheck-alpine:stable
+      steps:
+        - checkout
+        - run:
+            name: Check Scripts
+            command: |
+              find . -type f -name '*.sh' | xargs shellcheck --external-sources
+
+  test:
     machine: true
     steps:
       - checkout
@@ -13,9 +23,15 @@ jobs:
       - run:
           name: Test
           command: '/home/circleci/project/bin/bats /home/circleci/project/test/'
-      # - run:
-      #     name: Lint
-      #     command: 'shellcheck -s bash src/*'
-      #   run:
-      #     name: Coverage
-      #     command: 'bashcov --skip-uncovered ./test.sh'
+
+workflows:
+  version: 2
+  workflow:
+    jobs:
+      - shellcheck
+      - test:
+          requires:
+            - shellcheck
+          filters:
+            branches:
+              only: master
