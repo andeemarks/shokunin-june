@@ -19,6 +19,10 @@ jobs:
             name: Install
             command: |
               gem install bashcov
+        - run:
+            name: Coverage
+            command: |
+              bashcov --skip-uncovered ./test.sh
 
   test:
     machine: true
