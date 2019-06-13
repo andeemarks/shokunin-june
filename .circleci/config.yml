@@ -2,17 +2,17 @@ version: 2
 jobs:
   build:
     machine: true
-      steps:
-        - checkout
-        - run:
-            name: Install
-            command: 'git clone https://github.com/sstephenson/bats.git && cd bats && ./install.sh /usr/local'
-        - run:
-            name: Test
-            command: 'bats test/'
-        # - run:
-        #     name: Lint
-        #     command: 'shellcheck -s bash src/*'
-        #   run:
-        #     name: Coverage
-        #     command: 'bashcov --skip-uncovered ./test.sh'
+    steps:
+      - checkout
+      - run:
+          name: Install
+          command: 'git clone https://github.com/sstephenson/bats.git && cd bats && ./install.sh /usr/local'
+      - run:
+          name: Test
+          command: 'bats test/'
+      # - run:
+      #     name: Lint
+      #     command: 'shellcheck -s bash src/*'
+      #   run:
+      #     name: Coverage
+      #     command: 'bashcov --skip-uncovered ./test.sh'
