@@ -9,7 +9,7 @@ jobs:
           command: 'git clone https://github.com/sstephenson/bats.git && cd bats && ./install.sh $CIRCLE_WORKING_DIRECTORY'
       - run:
           name: Test
-          command: '$CIRCLE_WORKING_DIRECTORY/bats test/'
+          command: '$CIRCLE_WORKING_DIRECTORY/bin/bats test/'
       # - run:
       #     name: Lint
       #     command: 'shellcheck -s bash src/*'
