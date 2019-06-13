@@ -41,7 +41,7 @@ workflows:
       - lint
       - test:
           requires:
-            - shellcheck
+            - lint
           filters:
             branches:
               only: master
