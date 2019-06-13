@@ -11,18 +11,21 @@ jobs:
               shellcheck -s bash src/*
 
   coverage:
-      docker:
-        - image: circleci/ruby:latest
-      steps:
-        - checkout
-        - run:
-            name: Install
-            command: |
-              gem install bashcov
-        - run:
-            name: Coverage
-            command: |
-              bashcov --skip-uncovered ./test.sh
+    docker:
+      - image: circleci/ruby:latest
+    steps:
+      - checkout
+      - run:
+          name: Install
+          command: |
+            gem install bashcov
+            git clone https://github.com/sstephenson/bats.git 
+            cd bats
+            ./install.sh /home/circleci/project
+      - run:
+          name: Coverage
+          command: |
+            bashcov --skip-uncovered ./test.sh
 
   test:
     machine: true
