@@ -6,7 +6,10 @@ jobs:
       - checkout
       - run:
           name: Install
-          command: 'git clone https://github.com/sstephenson/bats.git && cd bats && ./install.sh /home/circleci/project'
+          command: |
+            git clone https://github.com/sstephenson/bats.git 
+            cd bats
+            ./install.sh /home/circleci/project'
       - run:
           name: Test
           command: '/home/circleci/project/bin/bats /home/circleci/project/test/'
