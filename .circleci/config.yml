@@ -6,9 +6,9 @@ jobs:
       steps:
         - checkout
         - run:
-            name: Check Scripts
+            name: Shellcheck
             command: |
-              find . -type f -name '*.sh' | xargs shellcheck --external-sources
+              shellcheck -s bash src/*
 
   coverage:
       docker:
